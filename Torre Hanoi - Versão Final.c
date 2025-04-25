@@ -179,7 +179,7 @@ int main()
             scanf ("%i",&x);
             printf ("\n\tQual será a pilha de destino? 1, 2 ou 3?  ");
             scanf ("%i",&y);
-            if((x>3||x<1)||(y>3||y<1))
+            if((x>3||x<1)||(y>3||y<1)||(x==y))
             {
                 system ("cls");
                 printf ("\n\tNúmero inválido! Digite novamente!\n\n");
@@ -190,6 +190,7 @@ int main()
                 if ((top(p1)!=-1) && top(p2)==-1 || top (p1) < top(p2))
                 {
                     push (&p2,pop(&p1));
+                    cont ++;
                     system ("cls");
                 }
                 else
@@ -203,6 +204,7 @@ int main()
                 if ((top(p1)!=-1) && (top(p3)==-1 || top(p1) < top(p3)))
                 {
                     push (&p3,pop(&p1));
+                    cont ++;
                     system ("cls");
                 }
                 else
@@ -216,6 +218,7 @@ int main()
                 if ((top(p2)!=-1)&& (p1.topo==-1 || top(p2) < top(p1)))
                 {
                     push (&p1,pop(&p2));
+                    cont ++;
                     system ("cls");
                 }
                 else
@@ -229,6 +232,7 @@ int main()
                 if ((top(p2)!=-1)&& (p3.topo==-1 || top(p2) < top(p3)))
                 {
                     push (&p3,pop(&p2));
+                    cont ++;
                     system ("cls");
                 }
                 else
@@ -242,6 +246,7 @@ int main()
                 if ((top(p3)!=-1)&&(p1.topo==-1 || top(p3) < top(p1)))
                 {
                     push (&p1,pop(&p3));
+                    cont ++;
                     system ("cls");
                 }
                 else
@@ -255,6 +260,7 @@ int main()
                 if ((top(p3)!=-1)&&(p2.topo==-1 || top(p3) < top(p2)))
                 {
                     push (&p2,pop(&p3));
+                    cont ++;
                     system ("cls");
                 }
                 else
@@ -263,7 +269,7 @@ int main()
                     printf ("\n\tMovimento não permitido! Digite novamente!\n\n");
                 }
             }
-            cont ++;
+
             printf ("\n\tMovimentos: %i\n",cont);
             imprimirPilha(p1,p2,p3);
 
@@ -271,17 +277,17 @@ int main()
 
         if((nivel==1 && cont==7)||(nivel==2 && cont==31)||(nivel==3 && cont==127))
         {
-            printf ("\n\nUauuu!!!! Você conseguiu com o mínimo de jogadas possível!!! Parabéns!\n");
-            printf ("\n\nDeseja continuar? sim(1)  não(2)");
+            printf ("\n\n\tUauuu!!!! Você conseguiu com o mínimo de jogadas possível!!! Parabéns!\n");
+            printf ("\n\n\tDeseja continuar? sim(1)  não(2)");
             scanf ("%i",&opcao);
             system ("cls");
         }
         else
         {
 
-            printf ("\nVocê conseguiu com %i movimentos.\n",cont);
-            printf ("\nParabéns!!! \n Se você gosta de desafios, pode tentar com número de jogadas menor!");
-            printf ("\n\nDeseja continuar? sim(1)  não(2) ");
+            printf ("\n\tVocê conseguiu com %i movimentos.\n",cont);
+            printf ("\n\tParabéns!!! \n\tSe você gosta de desafios, pode tentar com número de jogadas menor!");
+            printf ("\n\n\tDeseja continuar? sim(1)  não(2) ");
             scanf ("%i",&opcao);
             system ("cls");
         }
@@ -290,7 +296,7 @@ int main()
 
     if (opcao==2)
     {
-        printf ("\nObrigado por jogar!\nVolte logo!\n\n\n");
+        printf ("\n\tObrigado por jogar!\nVolte logo!\n\n\n");
     }
     getche();
 }
